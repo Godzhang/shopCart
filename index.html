@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>shopCart</title>
+<link rel="stylesheet" href="css/reset.css">
+<style>
+.left{float: left;}.right{float: right;}
+.box{width: 940px;margin: 100px auto;border-left: 1px solid #CADEFF;}
+.headInfo{height: 30px;line-height: 30px;border-top: 3px solid #a7cbff;background: #e2f2ff;}
+.headInfo > div,.item div{border-right: 1px solid #CADEFF;}
+.sel{width: 80px;text-align: center;height: 30px;}
+.product{width: 320px;text-align: center;}
+.prize{width: 150px;text-align: center;}
+.count{width: 110px;text-align: center;}
+.compute{width: 170px;text-align: center;}
+.handle{width: 104px;text-align: center;}
+
+.item{height: 100px;border-bottom: 1px solid #CADEFF;line-height: 100px;}
+.item:hover{background: rgb(238,246,255);}
+.item .sel,.item .product,.item .prize,.item .count,.item .compute,.item .handle{height: 100px;}
+.item .count{padding: 38px 13px;height: 24px;width: 84px;}
+.product img{display: inline-block;width: 100px;height: 80px;vertical-align: middle;}
+.product span{font-size: 14px;margin-left: 5px;}
+.reduce,.plus{display: block;width: 18px;height: 22px;background: #f0f0f0;border: 1px solid #e5e5e5;line-height: 22px;cursor: pointer;font-size: 18px;}
+.reduce:hover,.plus:hover{border: 1px solid #f00;}
+.proCount{display: block;height: 20px;width: 30px;padding: 0;border-width: 1px solid #e5e5e5;text-align: center;}
+
+.handle a{color: #666;}
+.handle a:hover{color: #f00;text-decoration: underline;}
+
+.foot{position: relative;height: 48px;line-height: 48px;background: linear-gradient(rgb(241,241,241),rgb(226,226,226));border-right: 1px solid #c8c8c8;border-bottom: 1px solid #c8c8c8;}
+.lab{width: 80px;text-align: center;display: inline-block;}
+.lab input{vertical-align: middle;}
+.delSel{color: #666;padding: 0 10px;}
+.delSel:hover{color: #f00;text-decoration: underline;}
+.allPrize{padding-right: 120px;}
+.allPrize span{font-weight: bold;}
+.red{color: #f00;}
+.settle{position: absolute;bottom: 0;right: 0;width: 104px;height: 48px;border-left: 1px solid #c8c8c8;text-align: center;line-height: 48px;color: #666;font-size: 20px;}
+.settle:hover{background:linear-gradient(rgb(226,226,226),rgb(241,241,241));color:#333;}
+
+</style>
+</head>
+<body>
+
+<div class="box">
+	<div class="headInfo clearfix">
+		<div class="left sel"></div>
+		<div class="left product">商品</div>
+		<div class="left prize">单价</div>
+		<div class="left count">数量</div>
+		<div class="left compute">小计</div>
+		<div class="left handle">操作</div>
+	</div>
+	<div class="product-list">
+		<div class="item clearfix">
+			<div class="left sel">
+				<input type="checkbox" name="pro" class="pro" checked>
+			</div>
+			<div class="left product">
+				<img src="//img10.360buyimg.com/n7/jfs/t3118/197/229364904/200600/37296076/57ab28ceNf76fe40f.jpg" alt="">
+				<span>越南进口红心火龙果</span>
+			</div>
+			<div class="left prize">41.90</div>
+			<div class="left count">
+				<em class="left reduce">-</em>
+				<input type="text" class="proCount left" value="1">
+				<em class="left plus">+</em>
+			</div>
+			<div class="left compute"><span class="cp">41.90</span></div>
+			<div class="left handle">
+				<a href="javascript:;" class="delItem">删除</a>
+			</div>
+		</div>
+		<div class="item clearfix">
+			<div class="left sel">
+				<input type="checkbox" name="pro" class="pro">
+			</div>
+			<div class="left product">
+				<img src="//img11.360buyimg.com/n7/jfs/t8212/335/867296173/346941/42857e6f/59b0afceNd7a1adfa.jpg" alt="">
+				<span>爱奇果 新疆库尔勒香梨</span>
+			</div>
+			<div class="left prize">29.90</div>
+			<div class="left count">
+				<em class="left reduce">-</em>
+				<input type="text" class="proCount left" value="1">
+				<em class="left plus">+</em>
+			</div>
+			<div class="left compute"><span class="cp">29.90</span></div>
+			<div class="left handle">
+				<a href="javascript:;" class="delItem">删除</a>
+			</div>
+		</div>
+		<div class="item clearfix">
+			<div class="left sel">
+				<input type="checkbox" name="pro" class="pro">
+			</div>
+			<div class="left product">
+				<img src="//img12.360buyimg.com/n7/jfs/t4255/174/3710465934/209676/5dc1fe10/58e737feN1053d55a.jpg" alt="">
+				<span>冷冻翡翠生虾仁</span>
+			</div>
+			<div class="left prize">19.90</div>
+			<div class="left count">
+				<em class="left reduce">-</em>
+				<input type="text" class="proCount left" value="1">
+				<em class="left plus">+</em>
+			</div>
+			<div class="left compute"><span class="cp">19.90</span></div>
+			<div class="left handle">
+				<a href="javascript:;" class="delItem">删除</a>
+			</div>
+		</div>
+		<div class="item clearfix">
+			<div class="left sel">
+				<input type="checkbox" name="pro" class="pro">
+			</div>
+			<div class="left product">
+				<img src="//img11.360buyimg.com/n7/jfs/t9037/259/21206640/472421/796a1ebf/599eeb05Naf31c3dc.jpg" alt="">
+				<span>金玉满阳澄湖大闸蟹礼券1588型</span>
+			</div>
+			<div class="left prize">199.00</div>
+			<div class="left count">
+				<em class="left reduce">-</em>
+				<input type="text" class="proCount left" value="1">
+				<em class="left plus">+</em>
+			</div>
+			<div class="left compute"><span class="cp">199.00</span></div>
+			<div class="left handle">
+				<a href="javascript:;" class="delItem">删除</a>
+			</div>
+		</div>
+		<div class="item clearfix">
+			<div class="left sel">
+				<input type="checkbox" name="pro" class="pro">
+			</div>
+			<div class="left product">
+				<img src="//img11.360buyimg.com/n7/jfs/t3493/253/425253315/176995/19f2a2b2/5808619cN27390691.jpg" alt="">
+				<span>冷冻智利原味三文鱼排</span>
+			</div>
+			<div class="left prize">49.90</div>
+			<div class="left count">
+				<em class="left reduce">-</em>
+				<input type="text" class="proCount left" value="1">
+				<em class="left plus">+</em>
+			</div>
+			<div class="left compute"><span class="cp">49.90</span></div>
+			<div class="left handle">
+				<a href="javascript:;" class="delItem">删除</a>
+			</div>
+		</div>
+	</div>
+	<div class="foot">
+		<label for="all" class="left lab"><input type="checkbox" id="all">全选</label>
+		<a href="javascript:;" class="left delSel">删除</a>
+		<div class="right allPrize">合计：￥<span class="red">340.60</span></div>
+		<a href="javascript:;" class="settle">结算</a>
+	</div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
