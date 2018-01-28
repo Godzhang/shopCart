@@ -109,6 +109,7 @@
 			if(target.className.indexOf("plus") > -1){
 				count.value = Number(count.value) + 1;
 				total.innerHTML = (count.value * unit).toFixed(2);
+				totalPrize();
 			}
 
 			if(target.className.indexOf("reduce") > -1){
@@ -119,14 +120,14 @@
 						var check = $(".pro", item);
 						item.parentNode.removeChild(item);
 						if(check.checked){
-							cp = $(".cp");
-							totalPrize();
+							cp = $(".cp");							
 						}
 					}
 				}else{
 					count.value = Number(count.value) - 1;
 					total.innerHTML = (count.value * unit).toFixed(2);
 				}
+				totalPrize();
 			}
 		}
 
